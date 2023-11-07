@@ -1,10 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import logini_img from '../images/login_img.png'
 import login_bg from '../images/login_bg.jpg'
 
 
 const Login = () => {
+
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `\home`; 
+    navigate(path);
+  }
   return (
     
     <div class="d-flex justify-content-between align-items-center flex-column mb-3 p-3 my-3" style={{ 
@@ -38,7 +45,7 @@ const Login = () => {
                 <input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1" />
               </div>
               <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button">Log in</button>
+                <button class="btn btn-primary" type="button" onClick={routeChange}>Log in</button>
               </div>
               <p className='text-primary'>Forgotten your username or password?</p>
             </div>
