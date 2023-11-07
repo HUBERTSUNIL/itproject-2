@@ -9,7 +9,7 @@ const Log = () => {
     console.log(datas[0].id);
     return (
     <div>
-        <table class="table table-bordered">
+        <table class="table table-bordered border-primary">
         <tr>
             <th>Roll No.</th>
             <th>Name</th>

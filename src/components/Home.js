@@ -6,6 +6,7 @@ import Log from './Log';
 const Home = () => {
   return (
     <>
+      <Navbar/>
       <Form />
       <Log/>
     </>

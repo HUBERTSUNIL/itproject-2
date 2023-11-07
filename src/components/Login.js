@@ -12,6 +12,10 @@ const Login = () => {
     let path = `\home`; 
     navigate(path);
   }
+  const routeChangeGuest = () =>{ 
+    let path = `\guest`; 
+    navigate(path);
+  }
   return (
     
     <div class="d-flex justify-content-between align-items-center flex-column mb-3 p-3 my-3" style={{ 
@@ -31,7 +35,7 @@ const Login = () => {
             <hr class="mt-1 mb-1" />
             <p><i class="fa-solid fa-check fa-xs"></i>Cookies must be enabled in your browser</p>
             <p><i class="fa-solid fa-check fa-xs"></i>Statistics can also be accessed using guest account</p>
-            <button class="btn btn-light" type="button">Log in as guest</button>
+            <button class="btn btn-light" type="button" onClick={routeChangeGuest}>Log in as guest</button>
           </div>
           <div class="col-md-8 w-50">
             <div class="card-body">
