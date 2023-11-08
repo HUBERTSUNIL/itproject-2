@@ -7,20 +7,19 @@ const Form = () => {
         let disease = document.getElementById("disease").value
         let remarks = document.getElementById("remarks").value
         try {
-          const response = await fetch('http://localhost:5000/addpatient', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ roll:roll,name:name,disease:disease,remarks:remarks}),
-          });
-          
+            const response = await fetch('http://localhost:5000/add', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ roll:roll}),
+            });
+
+        console.log(response);
           if (response.ok) {
             const data = await response.json();
             console.log(data);
-            if(data.status==true){
-                document.getElementById("f").reset();
-          }
+            
          }
     
         }
@@ -58,7 +57,7 @@ const Form = () => {
                 <textarea id="note" name="note" rows="4"></textarea>
             </div>
 
-            <button type="submit" class="add-button" onClick={Add}>Add</button>
+            <button  class="add-button" onClick={Add}>Add</button>
         </form>
     </div>
     )

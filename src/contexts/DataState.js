@@ -1,6 +1,29 @@
 import DataContext from "./dataContext";
 import { useState } from "react";
 
+async function getd(){
+  let data = []
+  try {
+    const response = await fetch('http://localhost:5000/patients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    
+    if (response.ok) {
+      const data1 = await response.json();
+      console.log(data1.data);
+      data = data1.data;
+    }
+
+  }
+  catch(err){
+    console.log(err);
+  }
+  return data;
+}
+
 const DataState = (props) => {
   const dataInitial = [
         {
@@ -21,6 +44,7 @@ const DataState = (props) => {
         'note':'kozhi',
         'date':'19-02-2023'}
     ]
+
 
   const [datas, setData] = useState(dataInitial)
   
