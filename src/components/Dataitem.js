@@ -5,10 +5,10 @@ const Dataitem = (props) => {
     return (
 
         <tr>
-            <td>{data.roll_no}</td>
+            <td>{data.id}</td>
             <td>{data.name}</td>
             <td>{data.disease}</td>
-            <td>{data.remarks}</td>
+            <td>{data.note}</td>
             <td>{data.date}</td>
         </tr>
             

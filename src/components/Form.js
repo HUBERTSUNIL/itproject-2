@@ -29,6 +29,20 @@ const Form = () => {
     //     }
 
     // }
+
+    const predict = async () => {
+          const response = await fetch(`http://localhost:5000/predict`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({symptoms:document.getElementById("symp").value})
+        });
+        
+      const d= await response.json();
+      console.log(d);
+      alert(d.report);
+    }
     const context = useContext(dataContext);
     const {addData} = context;
     
@@ -36,7 +50,7 @@ const Form = () => {
     const handleClick = (e)=>{
         e.preventDefault();
 
-        addData(data['id'],data['name'],data['disease'],data['symptoms'],data['note']);
+        addData(document.getElementById("roll").value,data['name'],data['disease'],document.getElementById("symp").value,data['note']);
     }
     const onChange = (e)=>{
         setData({...data, [e.target.name]: e.target.value})
@@ -48,7 +62,7 @@ const Form = () => {
                 <div class="input-container">
                     <div className='input-container-inside'>
                         <label for="rollNumber">Roll Number</label>
-                        <input type="text" id="roll" name="rollNumber" value={data.roll} onChange={onChange} required />
+                        <input type="text" id="roll" name="rollNumber"  onBlur={onChange} required />
                     </div>
 
                     <div className='input-container-inside'>
@@ -67,9 +81,10 @@ const Form = () => {
                 <div class="input-container-inside">
                         <label for="name">Symptoms</label>
                         <div class="input-group">
-                            <input type="text" aria-label="First name" onChange={onChange} value={data.symptoms} class="form-control"/>
+                           <input type="text" aria-label="symptoms" onBlur={predict}  id='symp' placeholder='Cough,continuous_sneezing' class="form-control"/>
+                            {/* <input type="text" aria-label="First name" onChange={onChange} value={data.symptoms} class="form-control"/>
                             <input type="text" aria-label="Last name" class="form-control"/>
-                            <input type="text" aria-label="Last name" class="form-control"/>
+                            <input type="text" aria-label="Last name" class="form-control"/> */}
                         </div>
 
                 </div>
