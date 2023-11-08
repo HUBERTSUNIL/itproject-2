@@ -4,11 +4,13 @@ import Dataitem from './Dataitem'
 
 const Log = () => {
     const context = useContext(dataContext)
-    const datas=context
+    const {datas}=context
     console.log(datas[0].id);
     return (
-    <div className='mx-3 p-3'>
-        <table >
+        <div className='m-3 p-3'>
+    <div className='m-3 p-3'>
+        <h1 className='d-flex justify-content-center'>Patient List</h1>
+        <table className='m-3 p-3'>
         <tr>
             <th>Roll No.</th>
             <th>Name</th>
@@ -21,6 +23,7 @@ const Log = () => {
             return <Dataitem data={data} />
         })}
         </table>
+    </div>
     </div>
   )
 }

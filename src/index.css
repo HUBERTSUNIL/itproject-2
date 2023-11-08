@@ -142,3 +142,7 @@ table {
   #chart2{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
+
+  #home{
+    background-color: #c8c8c8eb;
+  }

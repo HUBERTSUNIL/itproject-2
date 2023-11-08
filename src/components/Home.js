@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className='d-flex-column justify-content-between align-items-center'>
+      <div className='d-flex-column justify-content-between align-items-center p-3  bg-body-secondary'>
         <Form />
         <Log />
       </div>
