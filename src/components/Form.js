@@ -36,7 +36,7 @@ const Form = () => {
     const handleClick = (e)=>{
         e.preventDefault();
 
-        addData(data);
+        addData(data['id'],data['name'],data['disease'],data['symptoms'],data['note']);
     }
     const onChange = (e)=>{
         setData({...data, [e.target.name]: e.target.value})
