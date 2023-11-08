@@ -1,0 +1,109 @@
+/* Basic table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Header row styles */
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Alternate row background color for better readability */
+  tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  /* Hover effect on rows */
+  tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
+  /* Borders and border-radius */
+  th, td {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+  }
+  
+  /* Add box-shadow to the table for depth */
+  table {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling links within the table cells */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Label and input container styles */
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px 0;
+  }
+
+  /* Label styles */
+  label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  /* Input and textarea styles */
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: border-color 0.3s;
+  }
+
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+  /* Button styles */
+  .add-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .add-button:hover {
+    background-color: #0056b3;
+  }

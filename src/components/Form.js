@@ -1,26 +1,33 @@
 import React from 'react'
 
 const Form = () => {
+    
     return (
+    <div class="form-container">
         <form>
-            <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label">Roll No.</label>
-                <input type="input" className="form-control" id="id" name='id' />
+            <div class="input-container">
+                <label for="rollNumber">Roll Number</label>
+                <input type="text" id="rollNumber" name="rollNumber" required/>
             </div>
-            <div className="mb-3">
-                <label for="exampleInputPassword1" className="form-label">Name</label>
-                <input type="input" className="form-control" id="name" name='name' />
+
+            <div class="input-container">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required/>
             </div>
-            <div className="mb-3 form-check">
-                <label for="exampleInputEmail1" className="form-label">Disease</label>
-                <input type="input" className="form-control" id="disease" name='disease' />
+
+            <div class="input-container">
+                <label for="disease">Disease</label>
+                <input type="text" id="disease" name="disease" required/>
             </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Note</label>
-                <textarea className="form-control" id="note" name='note' rows="3"></textarea>
+
+            <div class="input-container">
+                <label for="note">Note</label>
+                <textarea id="note" name="note" rows="4"></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">Add</button>
+
+            <button type="submit" class="add-button" onClick={onclick}>Add</button>
         </form>
+    </div>
     )
 }
 

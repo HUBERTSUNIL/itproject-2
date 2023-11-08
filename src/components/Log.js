@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-// import Dataitem from './Dataitem'
 import dataContext from '../contexts/dataContext'
 import Dataitem from './Dataitem'
 
@@ -8,8 +7,8 @@ const Log = () => {
     const datas=context
     console.log(datas[0].id);
     return (
-    <div>
-        <table class="table table-bordered border-primary">
+    <div className='mx-3 p-3'>
+        <table >
         <tr>
             <th>Roll No.</th>
             <th>Name</th>

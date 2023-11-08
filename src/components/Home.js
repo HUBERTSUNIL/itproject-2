@@ -6,9 +6,12 @@ import Log from './Log';
 const Home = () => {
   return (
     <>
-      <Navbar/>
-      <Form />
-      <Log/>
+      <Navbar />
+      <div className='d-flex-column justify-content-between align-items-center'>
+        <Form />
+        <Log />
+      </div>
+
     </>
   )
 }
