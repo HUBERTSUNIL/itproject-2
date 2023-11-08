@@ -8,9 +8,36 @@ import login_bg from '../images/login_bg.jpg'
 const Login = () => {
 
   let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = `\home`; 
-    navigate(path);
+  const routeChange = async() =>{ 
+   
+    let user = document.getElementById("username").value
+    let pss = document.getElementById("password").value
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username:user, password:pss }),
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        if(data.status==true){
+        let path = `\home`; 
+        navigate(path);
+      }
+      else{
+        alert("try again")
+      }
+        }
+
+    }
+    catch(err){
+      console.log(err);
+    }
+    
   }
   const routeChangeGuest = () =>{ 
     let path = `\guest`; 
@@ -42,11 +69,11 @@ const Login = () => {
               <h5 class="card-title">Already Have an account?</h5>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
+                <input type="text" class="form-control" id="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                <input type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1" />
+                <input type="password" class="form-control" id="password" placeholder="password" aria-label="Username" aria-describedby="basic-addon1" />
               </div>
               <div class="d-grid gap-2">
                 <button class="btn btn-primary" type="button" onClick={routeChange}>Log in</button>
