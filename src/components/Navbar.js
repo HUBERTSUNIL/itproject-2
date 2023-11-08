@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
         <Link className="navbar-brand" to="/home">
-                <img src={logo}  alt="" width="120" height="64" className="d-inline-block align-text-top"/>
+                <img src={logo}  alt="" width="120" height="44" className="d-inline-block align-text-top"/>
         </Link>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
