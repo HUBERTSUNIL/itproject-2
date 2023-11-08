@@ -29,6 +29,7 @@ const Login = () => {
         navigate(path);
       }
       else{
+        document.getElementById("f").reset();
         alert("try again")
       }
         }
@@ -67,6 +68,7 @@ const Login = () => {
           <div class="col-md-8 w-50">
             <div class="card-body">
               <h5 class="card-title">Already Have an account?</h5>
+              <form id="f">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
                 <input type="text" class="form-control" id="username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
@@ -78,6 +80,7 @@ const Login = () => {
               <div class="d-grid gap-2">
                 <button class="btn btn-primary" type="button" onClick={routeChange}>Log in</button>
               </div>
+              </form>
               <p className='text-primary'>Forgotten your username or password?</p>
             </div>
           </div>
